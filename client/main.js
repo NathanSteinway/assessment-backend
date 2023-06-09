@@ -19,12 +19,21 @@ const getFortune = () => {
         })
 };
 
+
+
 const getInspired = () => {
     axios.get("http://localhost:4000/api/quote")
         .then(res => {
-            const quote = res.data
-            console.log(quote)
+
+            let { name, quote, imageURL } = res.data
+
+            quotesContainer.innerHTML = `
+                <h1>${name}</h1>
+                <img src="${imageURL}"</img>
+                <p>${quote}</p>
+            `
         })
+        .catch(err => console.log(err))
 }
 
 complimentBtn.addEventListener('click', getCompliment)
