@@ -7,10 +7,32 @@
   <body class="container">
     <button id="complimentButton">Get a compliment!</button>
     <button id="fortuneCookie">Get a fortune!</button>
+    <br></br>
     <button id="vgQuotesBtn">Get Inspired!</button>
+
 
     <main>
       <section id="vgQuotesContainer"></section>
+      <section id="addCharContainer">
+        <form>
+          <input
+            type="text"
+            id="Character Name"
+            placeholder="Enter Character Name"
+          />
+          <input 
+            type="text"
+            id="Quote"
+            placeholder="Enter Quote"
+          />
+          <input 
+            type="text"
+            id="imageURL"
+            placeholder="Enter Image URL"
+          />
+          <button id="submitBtn">SUBMIT</button>
+        </form>
+      </section>
     </main>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
