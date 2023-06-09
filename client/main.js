@@ -45,7 +45,7 @@ const makeNew = (evt) => {
     let bodyObj = {
         name: charName.value,
         quote: charQuote.value,
-        img: charImg.value
+        imageURL: charImg.value
     }
 
     axios.post("http://localhost:4000/api/char", bodyObj)
