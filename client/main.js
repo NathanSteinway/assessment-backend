@@ -39,12 +39,22 @@ const getInspired = () => {
         .catch(err => console.log(err))
 }
 
-const postNewChar = (event) => {
-    event.preventDefault()
-    axios.post("/api/char")
+const makeNew = (evt) => {
+    evt.preventDefault()
+    
+    let bodyObj = {
+        name: charName.value,
+        quote: charQuote.value,
+        img: charImg.value
+    }
+
+    axios.post("http://localhost:4000/api/char", bodyObj)
+        .then(res => {
+            console.log(res.data)
+        })
 }
 
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
 quotesBtn.addEventListener('click', getInspired)
-submitBtn.addEventListener('click', postNewChar)
+form.addEventListener('submit', makeNew)
