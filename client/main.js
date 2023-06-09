@@ -1,4 +1,7 @@
 const complimentBtn = document.getElementById("complimentButton")
+const fortuneBtn = document.getElementById("fortuneCookie")
+const quotesContainer = document.getElementById("vgQuotesContainer")
+const quotesBtn = document.getElementById("vgQuotesBtn")
 
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
@@ -8,4 +11,22 @@ const getCompliment = () => {
     });
 };
 
+const getFortune = () => {
+    axios.get("http://localhost:4000/api/fortune/")
+        .then(res => {
+            const fortune = res.data
+            alert(fortune)
+        })
+};
+
+const getInspired = () => {
+    axios.get("http://localhost:4000/api/quote")
+        .then(res => {
+            const quote = res.data
+            console.log(quote)
+        })
+}
+
 complimentBtn.addEventListener('click', getCompliment)
+fortuneBtn.addEventListener('click', getFortune)
+quotesBtn.addEventListener('click', getInspired)
