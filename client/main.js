@@ -19,8 +19,6 @@ const getFortune = () => {
         })
 };
 
-
-
 const getInspired = () => {
     axios.get("http://localhost:4000/api/quote")
         .then(res => {

@@ -1,0 +1,33 @@
+*{
+    margin:0;
+}
+
+header {
+    height: 100px;
+    background: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    height: calc(100vh - 100px);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#vgQuotesContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#vgQuotesContainer img {
+    display: block;
+    max-width:600px;
+    max-height:600px;
+    width: auto;
+    height: auto;
+}
