@@ -62,8 +62,5 @@ module.exports = {
 
     postNewChar: (req, res) => {
 
-        const formData = new FormData(form)
-        console.log(formData)
-
     }
 }
