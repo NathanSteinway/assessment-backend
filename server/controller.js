@@ -60,12 +60,10 @@ module.exports = {
         res.status(200).send(randomQuote)
     },
 
-    getNewChar: (req, res) => {
-        
-        e.preventDefault()
-        let data = req.body
+    postNewChar: (req, res) => {
 
-        res.status(200).send(console.log(data))
-        
+        const formData = new FormData(form)
+        console.log(formData)
+
     }
 }
