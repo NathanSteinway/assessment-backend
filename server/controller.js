@@ -61,8 +61,23 @@ module.exports = {
     },
 
     makeNew: (req, res) => {
+
         let newChar = charArray.push(req.body)
 
         res.status(200).send(req.body)
+    },
+
+    killHero: (req, res) => {
+
+        // to check and see if this actually did anything (it does)
+        console.log(charArray)
+
+        let index = charArray.findIndex(charName => charName === +req.params.id)
+
+        charArray.splice(index, 1)
+
+        res.status(200).send(console.log(charArray))
+        
+        }
+
     }
-}

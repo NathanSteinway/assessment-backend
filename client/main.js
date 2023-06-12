@@ -7,6 +7,7 @@ const form = document.getElementById('form')
 const charName = document.getElementById('Character Name')
 const charQuote = document.getElementById('Quote')
 const charImg = document.getElementById('imageURL')
+const deleteBtn = document.getElementById('deleteBtn')
 
 const getCompliment = () => {
     axios.get("http://localhost:4000/api/compliment/")
@@ -40,6 +41,7 @@ const getInspired = () => {
 }
 
 const makeNew = (evt) => {
+
     evt.preventDefault()
     
     let bodyObj = {
@@ -54,7 +56,20 @@ const makeNew = (evt) => {
         })
 }
 
+const killHero = (evt) => {
+
+    evt.preventDefault()
+
+    let bodyName = {
+        name: charName.value
+    }
+
+    axios.delete(`http://localhost:4000/api/char/delete`, bodyName)
+
+}
+
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
 quotesBtn.addEventListener('click', getInspired)
 form.addEventListener('submit', makeNew)
+deleteBtn.addEventListener('click', killHero)
